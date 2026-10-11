@@ -1,0 +1,29 @@
+Requirement
+/*Given two strings, a text string txt and a pattern string pat, both consisting of lowercase English alphabets. Return the starting indices (0-based) of all the occurrences of the pattern string pat in the text string txt.
+
+Note: Return an empty list in case of no occurrences of pattern.
+Input: txt = "geeksforgeeks", pat = "geek"
+Output: [0, 8]
+Explanation: The string "geek" occurs twice in txt, one starts at index 0 and the other at index 8.
+
+Input: txt = "aabaacaadaabaaba", pat = "aaba"
+Output: [0, 9, 12]
+
+Code:
+class Solution {
+    public List<int> search(string pat, string txt) {
+        List<int> output=new();
+        ReadOnlySpan<char> text=txt.AsSpan();
+        ReadOnlySpan<char> subtex=pat.AsSpan();
+        //ReadOnlySpan<char> requestData=txt;
+        for(int i=0; i<=text.Length-subtex.Length;i++)
+        {
+           if(text.Slice(i,subtex.Length).SequenceEqual(subtex))
+           {
+               output.Add(i);
+           }
+        }
+        return output;
+        
+    }
+}
