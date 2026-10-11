@@ -1,0 +1,27 @@
+Given an integer n, compute the sum of all natural numbers from 1 to n (inclusive). If n is 0, the sum should be 0.
+
+Examples:
+
+Input: n = 6
+Output: 21
+Explanation: The sum of natural numbers up to 6 is: 1 + 2 + 3 + 4 + 5 + 6 = 21.
+Input: n = 4
+Output: 10
+Explanation: The sum of natural numbers up to 4 is: 1 + 2 + 3 + 4 = 10.
+
+Coding
+using System;
+
+class GFG {
+    static void Main() {
+        int n = int.Parse(Console.ReadLine());
+
+        int totalCount=0;
+        // code here
+        for(int i=0;i<=n;i++)
+        {
+            totalCount=totalCount+i;
+        }
+        Console.WriteLine(totalCount);
+    }
+}
